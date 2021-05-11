@@ -3,6 +3,8 @@ body {
   height: 300px;
   color: black;
   background-color: burlywood;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .App-header {
@@ -10,8 +12,12 @@ body {
   font-weight: 700;
   padding: 1.5rem 0 1.5rem 20px;
   color: white;
-  background: rgb(2,0,36);
-  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,212,255,0) 100%);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(0, 212, 255, 0) 100%
+  );
 }
 
 .pregunta,
@@ -31,4 +37,10 @@ body {
 .pal4 {
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 0;
 }

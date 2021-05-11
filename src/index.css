@@ -45,6 +45,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/*termina el css reset ==========================*/
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;

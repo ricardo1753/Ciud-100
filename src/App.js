@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import Menu from './components/Menu'
+import React, { Component } from 'react';
+import Menu from './components/Menu';
 
 class App extends Component {
   render() {
