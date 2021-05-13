@@ -2,12 +2,12 @@
 "datos": [
   {
   "pregunta":  "1. What is the supreme law of the land?", 
-  "respuesta":  "The Constitution", 
+  "respuesta":  "1. The Constitution", 
   "sonido":  "sounds/Track01.mp3" 
   },
   {
   "pregunta":  "2. What does the Constitution do?", 
-  "respuesta":  "Sets up the government. Defines the government. Protects basic rights of Americans", 
+  "respuesta":  "2. Budget the government. Protects basic rights of Americans", 
   "sonido":  "sounds/Track02.mp3" 
   },
   {

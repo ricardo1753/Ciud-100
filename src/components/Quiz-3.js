@@ -13,7 +13,7 @@ class Quiz3 extends Component {
         <p className="pregunta">{datos[1].pregunta}</p>
         <ul>
           {resp.map((value, index) => {
-            return <li key={index}>{value}</li>;
+            return <li className="respuesta" key={index}>{value}</li>;
           })}
         </ul>
       </div>
