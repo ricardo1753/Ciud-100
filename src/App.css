@@ -21,14 +21,23 @@ body {
 }
 
 .pregunta,
-.respuesta {
-  color: darkred;
-  font-size: calc(10px + 3vmin);
-  padding: 10px;
-}
 
 .respuesta {
-  color: darkblue;
+  font-size: calc(10px + 3vmin);
+  padding: 10px;
+  background-color:  rgba(255,255,255,0);
+}
+
+.respuesta-incorrecta {
+  font-size: calc(10px + 3vmin);
+  text-decoration: line-through;
+  padding: 10px;
+  background-color:  rgba(255,0,0,.2);
+}
+.respuesta-correcta {
+  font-size: calc(10px + 3vmin);
+  padding: 10px;
+  background-color: rgba(0,255,0,1);
 }
 
 .pal1,
@@ -43,4 +52,20 @@ body {
   display: flex;
   justify-content: space-evenly;
   padding: 10px 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.right {
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.p1 {
+  padding: 1rem;
+}
+.m1 {
+  margin: 1rem;
 }
