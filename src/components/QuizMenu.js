@@ -51,7 +51,7 @@ class QuizMenu extends Component {
             color="primary"
             onClick={this.onActiveListenI}
           >
-            Active Listen I
+            Listen I
           </Button>
         )}
         {butListenII && (
@@ -60,7 +60,7 @@ class QuizMenu extends Component {
             color="primary"
             onClick={this.onActiveListenI}
           >
-            Active Listen II
+            Listen II
           </Button>
         )}
         {butMemDrillI && (
@@ -69,7 +69,7 @@ class QuizMenu extends Component {
             color="primary"
             onClick={this.onMemDrillI}
           >
-            Memory Drill I
+            Drill I
           </Button>
         )}
         <div>

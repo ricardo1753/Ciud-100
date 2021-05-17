@@ -13,21 +13,21 @@
   "sonido":  "sounds/Track02.mp3" 
   },
   {
-  "pregunta": "3. The idea of self-government is in the first three words of the Constitution.. What are these words?",
-  "respuesta":  "We the People", 
-  "correcta": 0,
+  "pregunta": "3. The idea of self-government is in the first three words of the Constitution. What are these words?",
+  "respuesta":  "Me the President.We the People", 
+  "correcta": "We the People",
   "sonido":  "sounds/Track03.mp3" 
   },
   {
   "pregunta": "4. What is an amendment?", 
-  "respuesta":  "A change (to the Constitution). An addition (to the Constitution)", 
-  "correcta": 0,
+  "respuesta":  "A fix in the Goverment.A change to the Constitution.A mistake in the Constitution", 
+  "correcta": "A change to the Constitution.",
   "sonido":  "sounds/Track04.mp3" 
   },
   {
   "pregunta": "5. What do we call the first ten amendments to the Constitution?", 
-  "respuesta":  "The Bill of Rights", 
-  "correcta": 0,
+  "respuesta":  "The Rights of the People.The Right things.The Bill of Rights", 
+  "correcta": "The Bill of Rights",
   "sonido":  "sounds/Track05.mp3" 
   },
 {
