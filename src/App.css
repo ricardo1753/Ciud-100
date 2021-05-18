@@ -20,7 +20,11 @@ body {
   );
 }
 
-.pregunta,
+.pregunta {
+  font-size: calc(10px + 2vmin);
+  padding: 10px;
+  color:sienna;
+}
 
 .respuesta {
   font-size: calc(10px + 3vmin);
@@ -64,7 +68,7 @@ body {
 }
 
 .p1 {
-  padding: 1rem;
+  padding: 3rem;
 }
 .m1 {
   margin: 1rem;

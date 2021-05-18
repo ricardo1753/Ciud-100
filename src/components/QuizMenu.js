@@ -6,14 +6,16 @@ import Quiz3 from "../components/Quiz-3";
 
 class QuizMenu extends Component {
   state = {
-    actListenI: false,
+    controlQuiz1: false,
+    controlQuiz2: false,
+    controlQuiz3: false,
     butListenI: true,
     butListenII: true,
-    butMemDrillI: true,
+    butMemDrillI: false,
   };
   onActiveListenI = () => {
     this.setState({
-      actListenI: true,
+      controlQuiz1: true,
       butListenI: false,
       butListenII: false,
       butMemDrillI: false,
@@ -21,24 +23,26 @@ class QuizMenu extends Component {
   };
   onActiveListenII = () => {
     this.setState({
-      actListenI: false,
+      controlQuiz1: false,
+      controlQuiz3: true,
       butListenI: false,
-      butListenII: true,
+      butListenII: false,
       butMemDrillI: false,
     });
   };
   onMemDrillI = () => {
     this.setState({
-      actListenI: false,
+      controlQuiz1: false,
       butListenI: false,
       butListenII: false,
-      butMemDrillI: true,
+      butMemDrillI: false,
     });
   };
   render() {
     const {
-      actListenI,
-      actListenII,
+      controlQuiz1,
+      controlQuiz2,
+      controlQuiz3,
       butListenI,
       butListenII,
       butMemDrillI,
@@ -58,7 +62,7 @@ class QuizMenu extends Component {
           <Button
             variant="contained"
             color="primary"
-            onClick={this.onActiveListenI}
+            onClick={this.onActiveListenII}
           >
             Listen II
           </Button>
@@ -73,9 +77,9 @@ class QuizMenu extends Component {
           </Button>
         )}
         <div>
-          {actListenI && <Quiz />}
-          {actListenII && <Quiz2 />}
-          {butMemDrillI && <Quiz3 />}
+          {controlQuiz1 && <Quiz />}
+          {controlQuiz2 && <Quiz2 />}
+          {controlQuiz3 && <Quiz3 />}
         </div>
       </div>
     );

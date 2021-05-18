@@ -16,11 +16,11 @@ class Quiz3 extends Component {
   queHacer = (event) => {
     alert(
       "Selecciona la respuesta correcta." +
-      "Después pulsa 'Check Answer'." +
-      "Si tu respuesta es correcta lo va a indicar en color verde," +
-      "sino es correcta lo señala en color rojo y en verde te dice cuál es la respuesta correcta."
-    )
-  }
+        "Después pulsa 'Check Answer'." +
+        "Si tu respuesta es correcta lo va a indicar en color verde," +
+        "sino es correcta lo señala en color rojo y en verde te dice cuál es la respuesta correcta."
+    );
+  };
   handleChange = (event) => {
     this.setState({
       respuestaUsuario: event.target.value,
@@ -42,7 +42,7 @@ class Quiz3 extends Component {
       respuestaUsuario: "",
       correctCheck: false,
     });
-  }
+  };
   render() {
     const { datos, indicePregunta, respuestaUsuario, correctCheck } =
       this.state;
@@ -52,7 +52,7 @@ class Quiz3 extends Component {
     const { correcta } = datos[indicePregunta];
     console.log({ state: this.state });
     return (
-      <div className="nav-bar">
+      <div >
         <p className="pregunta">{datos[indicePregunta].pregunta}</p>
         <RadioGroup
           aria-label="Lista De Respuestas"
@@ -95,8 +95,7 @@ class Quiz3 extends Component {
           <Button
             variant="contained"
             color="primary"
-            onClick={this.queHacer}
-          >
+            onClick={this.queHacer}>
             ?
           </Button>
           <Button
