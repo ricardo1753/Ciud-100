@@ -9,7 +9,6 @@ import Typography from "@material-ui/core/Typography";
 
 import { datos } from "../datos_mem.json";
 
-
 class Quiz3 extends Component {
   state = {
     datos: datos,
@@ -19,6 +18,7 @@ class Quiz3 extends Component {
     correctas: 0,
     guiaPreguntas: [],
     maxPreguntas: 10,
+    cuentaPreguntas: 0,
   };
   componentDidMount() {
     const { guiaPreguntas, maxPreguntas } = this.state;
@@ -32,22 +32,7 @@ class Quiz3 extends Component {
       }
     }
     //const datosReorganizados = datos.sort((pregunta1, pregunta2) => { return pregunta2.respuesta.length - pregunta1.respuesta.length });
-    //this.setState({ datos: datosReorganizados, correctas });
-    //Getting the array of questions to be done at random
-    let contador = 0;
-    while (contador < maxPreguntas) {
-      let numero = Math.random() * (datos.length - 0) + 0;
-      numero = Math.floor(numero);
-      let offset = guiaPreguntas.indexOf(numero);
-      if (offset === -1) {
-        guiaPreguntas.push(numero);
-        ++contador;
-      }
-      console.log("maximo preguntas ", maxPreguntas);
-      console.log("guia preguntas largo ", guiaPreguntas.length);
-      console.log("arreglo guia ", { guiaPreguntas });
-      console.log("datos ", { datos });
-    }
+    //this.setState({ datos: datosReorganizados, correctas });    }
   }
   queHacer = (event) => {
     alert(
@@ -76,7 +61,7 @@ class Quiz3 extends Component {
       localStorage.setItem("correctas", correctas + "");
       this.setState({ correctas });
     }
-  }
+  };
   checkAnswer = (event) => {
     const { respuestaUsuario, datos, indicePregunta, correctCheck } =
       this.state;
@@ -92,40 +77,49 @@ class Quiz3 extends Component {
     }
   };
   nextQuestion = (event) => {
-    const { indicePregunta, datos, maxPreguntas, guiaPreguntas } = this.state;
-    if (indicePregunta === maxPreguntas) {
+    const { datos, maxPreguntas, guiaPreguntas, cuentaPreguntas } = this.state;
+    if (cuentaPreguntas === maxPreguntas) {
       alert("New set of questions!!!");
       this.setState({
-        indicePregunta: 0,
-        respuestaUsuario: "",
-        correctCheck: false,
+        cuentaPreguntas: 0,
+        //respuestaUsuario: "",
+        //correctCheck: false,
       });
     } else {
       this.setState({
-        indicePregunta: indicePregunta + 1,
-        respuestaUsuario: "",
-        correctCheck: false,
+        cuentaPreguntas: cuentaPreguntas + 1,
+        //respuestaUsuario: "",
+        //correctCheck: false,
       });
     }
     this.setState({
       respuestaUsuario: "",
       correctCheck: false,
     });
+    //Getting the questions to be done at random
+    let dale = false;
+    while (!dale) {
+      let numero = Math.random() * (datos.length - 0) + 0;
+      numero = Math.floor(numero);
+      let offset = guiaPreguntas.indexOf(numero);
+      if (offset === -1) {
+        guiaPreguntas.push(numero);
+        this.setState({ indicePregunta: numero });
+        dale = true;
+      }
+    }
   };
   render() {
-    const { datos, indicePregunta, respuestaUsuario, correctCheck, correctas, guiaPreguntas, indicador } =
+    const { datos, indicePregunta, respuestaUsuario, correctCheck, correctas } =
       this.state;
     const resp = datos[indicePregunta].respuesta.split(".");
     //sacamos de datos[indicePregunta] correcta y lo ponemos en la variable que creamos de nombre 'correcta'
     //const correcta = datos[indicePregunta].correcta (destructuring)
     const { correcta, pregunta } = datos[indicePregunta];
     //const indicador = guiaPreguntas[indicePregunta];
-    console.log("guiaPreguntas ============", { guiaPreguntas });
-    console.log("indicePregunta ===========", indicePregunta);
-    console.log("guiaP[indiceP] =====", guiaPreguntas[indicePregunta]);
-    console.log("indicador ===== ",indicador);
+
     return (
-      <div >
+      <div>
         {/*plantea pregunta*/}
         <div className="pregunta">{pregunta}</div>
         <RadioGroup
@@ -166,10 +160,7 @@ class Quiz3 extends Component {
           })}
         </RadioGroup>
         <div className="flex right p1">
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={this.queHacer}>
+          <Button variant="contained" color="primary" onClick={this.queHacer}>
             ?
           </Button>
           <Button
@@ -191,9 +182,13 @@ class Quiz3 extends Component {
             </Button>
           )}{" "}
         </div>
-        <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-            <Typography variant="h6">Total Correct Answers </Typography>
-            <Badge color="primary" badgeContent={correctas}><Assignment/></Badge> 
+        <div
+          style={{ width: "100%", display: "flex", justifyContent: "center" }}
+        >
+          <Typography variant="h6">Total Correct Answers </Typography>
+          <Badge color="primary" badgeContent={correctas}>
+            <Assignment />
+          </Badge>
         </div>
       </div>
     );
