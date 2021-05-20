@@ -1,5 +1,4 @@
 body {
-  text-align: justify;
   height: 300px;
   color: black;
   background-color: burlywood;
@@ -21,27 +20,27 @@ body {
 }
 
 .pregunta {
-  font-size: calc(10px + 2vmin);
+  font-size: 1.5rem;
   padding: 10px;
-  color:sienna;
+  color: brown;
+  width: calc(100vw - 10px);
+  overflow: hidden;
+  overflow-wrap: break-word;
 }
 
 .respuesta {
-  font-size: calc(10px + 3vmin);
   padding: 10px;
-  background-color:  rgba(255,255,255,0);
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .respuesta-incorrecta {
-  font-size: calc(10px + 3vmin);
   text-decoration: line-through;
   padding: 10px;
-  background-color:  rgba(255,0,0,.2);
+  background-color: rgba(255, 0, 0, 0.2);
 }
 .respuesta-correcta {
-  font-size: calc(10px + 3vmin);
   padding: 10px;
-  background-color: rgba(0,255,0,1);
+  background-color: rgba(0, 255, 0, 1);
 }
 
 .pal1,
@@ -72,4 +71,7 @@ body {
 }
 .m1 {
   margin: 1rem;
+}
+.wraper {
+  text-align: justify;
 }
