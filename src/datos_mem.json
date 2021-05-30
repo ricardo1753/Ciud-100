@@ -146,20 +146,20 @@
 },
 {
 "pregunta": "25. Why do some states have more Representatives than other states?",
-  "correcta": "",
-"respuesta": "- (Because of) the state’s population  - (Because) they have more people  - (Because) some states have more people",
+  "correcta": "Because some states have more people",
+"respuesta": "Because of the state’s economy.Because they have more schools.Because some states have more people",
 "sonido": "sounds/Track25.mp3"
 },
 {
 "pregunta": "26. We elect a President for how many years? ",
-  "correcta": "",
-"respuesta": "Four (4)",
+  "correcta": "Four (4)",
+"respuesta": "Four (4).Forty (4o).Five (5)",
 "sonido": "sounds/Track26.mp3"
 },
 {
 "pregunta": "27. In what month do we vote for President?",
-  "correcta": "",
-"respuesta": "November",
+  "correcta": "November",
+"respuesta": "September.November.January",
 "sonido": "sounds/Track27.mp3"
 },
 {
