@@ -12,7 +12,7 @@ class Intro extends Component {
   render() {
     return (
       <div>
-        <div
+        {/*<div
           alt="Welcome Image"
           style={{
             height: "340px",
@@ -23,7 +23,7 @@ class Intro extends Component {
           <header className="App-header">
             <h2>Learn with RimiWeb</h2>
           </header>
-        </div>
+        </div>*/}
         <div className="wraper">
           <p className="pal1">
             Aquí están las 100 preguntas del exámen de Cívica (Historia y

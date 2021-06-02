@@ -120,6 +120,9 @@ class Quiz3 extends Component {
 
     return (
       <div>
+        <div style={{ color: "blue", fontWeight: 900 }}>
+          section: Quiz 3
+        </div>
         {/*plantea pregunta*/}
         <div className="pregunta">{pregunta}</div>
         <RadioGroup

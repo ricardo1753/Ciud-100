@@ -43,8 +43,15 @@ class Quiz extends Component {
     console.log("render ", contador);
     return (
       <div>
+        <div style={{ color: "blue", fontWeight: 900 }}>
+          section: Quiz 2
+        </div>
         <div className="nav-bar">
-          <Button variant="contained" color="secondary" onClick={this.onExplica}>
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={this.onExplica}
+          >
             ?
           </Button>
           <Button variant="contained" color="primary" onClick={this.onQuestion}>

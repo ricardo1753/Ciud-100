@@ -4,7 +4,7 @@ import VolumeUpIcon from "@material-ui/icons/VolumeUp";
 
 import { quiz } from "../quiz.json";
 import Pregunta from "./Pregunta";
-import Respuesta from './Respuesta';
+import Respuesta from "./Respuesta";
 
 class Quiz extends Component {
   state = {
@@ -18,7 +18,6 @@ class Quiz extends Component {
     if (this.state.contador <= quiz.length - 1) {
       this.setState({
         contador: this.state.contador + 1,
-        question: true,
         answer: false,
       });
     }
@@ -26,12 +25,17 @@ class Quiz extends Component {
 
   onAnswer = () => {
     this.setState({
+      question: true,
       answer: true,
     });
   };
 
   onExplica = () => {
-    alert("Presione Question para leer y escuchar la pregunta. Después responda la pregunta en voz alta antes de pulsar Answer. Púlselo y verifique si su respuesta es correcta!");
+    alert(
+      "Presione Question para leer y escuchar la pregunta." +
+        "Después responda la pregunta en voz alta antes de pulsar Answer." +
+        "Púlselo y verifique si su respuesta es correcta!"
+    );
   };
 
   render() {
@@ -39,11 +43,13 @@ class Quiz extends Component {
     console.log("render ", contador);
     return (
       <div>
-        <div style={{ color: "blue", fontWeight: 900 }}>
-          section: Quiz 1
-        </div>
+        <div style={{ color: "blue", fontWeight: 900 }}>section: Quiz 4</div>
         <div className="nav-bar">
-          <Button variant="contained" color="primary" onClick={this.onExplica}>
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={this.onExplica}
+          >
             ?
           </Button>
           <Button variant="contained" color="primary" onClick={this.onQuestion}>
@@ -56,13 +62,11 @@ class Quiz extends Component {
         </div>
         {console.log("dime ", contador)}
         {question && (
-          <Pregunta
-            fuente={quiz[contador].pregunta}
-            sonido={quiz[contador].sonpreg}
-          />
+          <Pregunta fuente={"... ?"} sonido={quiz[contador].sonpreg} />
         )}
         {answer && (
           <Respuesta
+            fuente={quiz[contador].pregunta}
             fuente={quiz[contador].respuesta}
             sonido={quiz[contador].sonresp}
           />
