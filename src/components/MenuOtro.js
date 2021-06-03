@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import PaletteTwoTone from "@material-ui/icons/PaletteTwoTone";
 
 import Intro from "./Intro";
 import Listen from "./Listen";
@@ -158,9 +159,9 @@ class MenuOtro extends React.Component {
           aria-haspopup="true"
           onClick={this.handleClick}
         >
+          <PaletteTwoTone/>
           Menu
         </Button>
-
         <Menu
           id="simple-menu"
           anchorEl={anchorEl}

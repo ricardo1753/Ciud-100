@@ -62,7 +62,7 @@ class Quiz extends Component {
         </div>
         {console.log("dime ", contador)}
         {question && (
-          <Pregunta fuente={"... ?"} sonido={quiz[contador].sonpreg} />
+          <Pregunta fuente={"[ ??? ]"} sonido={quiz[contador].sonpreg} />
         )}
         {answer && (
           <Respuesta
