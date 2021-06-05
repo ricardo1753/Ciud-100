@@ -32,7 +32,7 @@ class Quiz extends Component {
 
   onExplica = () => {
     alert(
-      "Presione Question para leer y escuchar la pregunta." +
+      "Presione Question para escuchar la pregunta." +
         "Después responda la pregunta en voz alta antes de pulsar Answer." +
         "Púlselo y verifique si su respuesta es correcta!"
     );

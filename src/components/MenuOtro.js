@@ -2,7 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import PaletteTwoTone from "@material-ui/icons/PaletteTwoTone";
+import MenuTwoTone from "@material-ui/icons/MenuTwoTone";
 
 import Intro from "./Intro";
 import Listen from "./Listen";
@@ -40,6 +40,7 @@ class MenuOtro extends React.Component {
       abreQuiz4: false,
       abreQuiz: false,
     });
+    this.handleClose();
   };
 
   onIntro = () => {
@@ -53,6 +54,7 @@ class MenuOtro extends React.Component {
       abreQuiz4: false,
       abreQuiz: false,
     });
+    this.handleClose();
   };
 
   onListen = () => {
@@ -62,6 +64,7 @@ class MenuOtro extends React.Component {
       abreIntro: false,
       muestra: false,
     });
+    this.handleClose();
   };
 
   onQuiz = (event) => {
@@ -114,6 +117,7 @@ class MenuOtro extends React.Component {
         muestra: false,
       });
     }
+    this.handleClose();
   };
 
   handleClick = (event) => {
@@ -135,31 +139,16 @@ class MenuOtro extends React.Component {
       abreQuiz2,
       abreQuiz3,
       abreQuiz4,
-      vez,
     } = this.state;
-    console.log("contador ", vez);
 
     return (
       <div>
-        <div
-          alt="Welcome Image"
-          style={{
-            height: muestra ? "340px" : "72px",
-            width: "100%",
-            backgroundImage: 'url("/images/USPassports.jpg")',
-          }}
-        >
-          <header className="App-header">
-            <h2>Learn with RimiWeb</h2>
-          </header>
-        </div>
-
         <Button
           aria-owns={anchorEl ? "simple-menu" : undefined}
           aria-haspopup="true"
           onClick={this.handleClick}
         >
-          <PaletteTwoTone/>
+          <MenuTwoTone />
           Menu
         </Button>
         <Menu
@@ -184,8 +173,20 @@ class MenuOtro extends React.Component {
             Quiz 4
           </MenuItem>
         </Menu>
+        <div
+          alt="Welcome Image"
+          style={{
+            height: muestra ? "340px" : "72px",
+            width: "100%",
+            backgroundImage: 'url("/images/USPassports.jpg")',
+          }}
+        >
+          <header className="App-header">
+            <h2>Learn with RimiWeb</h2>
+          </header>
+        </div>
 
-        {abreMenu && <MenuOtro />}
+        {/* {abreMenu && <MenuOtro />} */}
         {abreIntro && <Intro />}
         {abreListen && <Listen />}
         {abreQuiz && <Quiz />}
